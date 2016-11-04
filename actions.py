@@ -76,7 +76,7 @@ class ExecAction(Action, ProcessListener):
 
 
     def stop(self):
-        self.aproc.kill()
+        self.aproc.proc.terminate()
         if self.sink_manager is not None:
             self.sink_manager.write("Aborted.")
             self.sink_manager.finish()
